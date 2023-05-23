@@ -17,7 +17,7 @@ namespace Buyify_Web.Pages
 
         public void OnGet()
         {
-            PanierItems = _panier.PanierItems.ToList();
+            PanierItems = _panier.Items.ToList();
         }
     }
 }

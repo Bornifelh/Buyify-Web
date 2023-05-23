@@ -19,7 +19,7 @@ namespace Buyify_Web.Views.Login
             if (IsValidLogin(Email, Password))
             {
                 // Rediriger vers la page d'accueil ou une autre page appropriée
-                return RedirectToPage("/Index");
+                return RedirectToPage("/Accueil");
             }
             else
             {

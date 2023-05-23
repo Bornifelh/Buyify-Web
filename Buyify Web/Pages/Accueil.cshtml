@@ -1,0 +1,44 @@
+﻿@page
+@model AccueilModel
+@{
+    ViewData["Title"] = "Accueil";
+}
+
+<body class="Body-containt">    
+    
+
+    <div class="div-centerale">
+            <div class="slideshow-container">
+                <div class="slide">
+                    <img src="https://m.media-amazon.com/images/I/718UxTjopBL._SX3000_.jpg" alt="Image 1">
+                </div>
+                <div class="slide">
+                    <img src="https://images-eu.ssl-images-amazon.com/images/G/08/Events/2023/MDAY/Store_Page/xcm_banners_01_v2_1500x300_fr-fr.jpg" alt="Image 2">
+                </div>
+                <div class="slide">
+                    <img src="https://m.media-amazon.com/images/I/71PXTGItC0L._AC_SX679_.jpg" alt="Image 3">
+                </div>
+            </div>
+
+
+        <div class="text-center">
+    
+           <ul class="collection-view">
+                @foreach (var articles in Model.Articles)
+                {
+                    <a href="/Details/@articles.Id" class="Soulignement">
+                    <div class="produit-item">
+                        <img class="ImageProduit" src="@articles.Img1" alt="@articles.Nom" />
+                        <h3 class="NomProduit">@articles.Nom</h3>
+                        <p><b>Prix : @articles.Prix</b></p>
+                        <p class="DetailsProduit">@articles.Details</p>
+                        <form method="post" asp-page-handler="AjouterAuPanier" asp-route-id="@articles.Id">
+                            <button type="submit" class="Btn-add">Ajout au panier</button>
+                        </form>                
+                    </div>
+                    </a>
+                }
+            </ul>
+        </div>
+    </div>
+</body>

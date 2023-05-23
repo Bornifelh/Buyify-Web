@@ -1,0 +1,37 @@
+﻿@page
+@model Buyify_Web.Views.Login.IndexModel
+@{
+    
+}
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="~/css/login.css" asp-append-version="true" />
+</head>
+<body>
+    <h1 class="TitreLogin">Se connecter</h1>
+
+<form  method="post">
+    <div>
+        <input class="inputEmailLogin" placeholder="Votre e-mail" type="email" id="email" name="Email" required>
+    </div>
+    <div>
+        <input class="inputEmailLogin" placeholder="Mot de passe" type="password" id="password" name="Password" required>
+    </div>
+    <div>
+        <button type="submit">Se connecter</button>
+        <a href="/Accueil">Créer nouveau compte</a>
+    </div>
+</form>
+
+    <footer class="border-top footer text-muted">
+        <div class="container">
+            &copy; 2023 - Buyify Web - <a href="/Privacy">Privacy</a> - <a href="/Accueil">Accueil</a>
+        </div>
+    </footer>
+
+    <script src="~/lib/jquery/dist/jquery.min.js"></script>
+    <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="~/js/site.js" asp-append-version="true"></script>
+</body>

@@ -1,0 +1,40 @@
+﻿@page
+@model Buyify_Web.Pages.PanierModel
+@{
+    ViewData["Title"] = "Panier";
+}
+
+<h2>Panier</h2>
+
+@if (Model.PanierItems?.Count > 0)
+{
+    <table>
+        <thead>
+            <tr>
+                <th>Produit</th>
+                <th>Prix</th>
+                <th>Quantité</th>
+                <th>Total</th>
+                <th></th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in Model.PanierItems)
+            {
+                <tr>
+                    <td>@item.NomProduit</td>
+                    <td>@item.Prix</td>
+                    <td>@item.Quantite</td>
+                    <td>@(item.Prix * item.Quantite)</td>
+                    <td>
+                        <button type="button" onclick="location.href='@Url.Action("Supprimer", new { id = item.Id })'">Supprimer</button>
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+}
+else
+{
+    <p>Votre panier est vide.</p>
+}

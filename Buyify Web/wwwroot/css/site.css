@@ -1,0 +1,324 @@
+html {
+  font-size: 14px;
+}
+
+@media (min-width: 768px) {
+  html {
+    font-size: 16px;
+  }
+}
+
+html {
+  position: relative;
+  min-height: 100%;
+}
+
+body {
+  margin-bottom: 80px;
+}
+
+
+/*Gestion de superposition du diapo et des articles*/
+.div-centerale {
+    position: relative;
+}
+
+.Soulignement {
+    text-decoration: none;
+    color : black;
+}
+
+
+
+
+
+
+
+
+
+
+
+.container-full {
+    align-items: center;
+}
+/*Gestion ligne logo principale*/
+.LogoAccueil {
+    height: 50px;
+    width: auto;
+}
+
+.BtnValidation {
+    height: 40px;
+    width: auto;
+    margin-right: 5px;
+}
+
+
+.footer {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    height: 60px; /* Ajustez la hauteur du footer selon vos besoins */
+}
+
+.SearchInput {
+    margin : 0px;
+    border-color: orange;
+    width : 500px;
+    height : 50px;
+}
+
+.BtnAdresseLogin {
+    margin-right: 5px;
+    height: 50px;
+    width : auto;
+    background-color : orange;
+    border : none;
+    color : white;
+    text-align : left;
+}
+
+.BtnAdresseLogin1 {
+    margin-right: 5px;
+    margin-left: 5px;
+    height: 50px;
+    width: auto;
+    background-color: orange;
+    border: none;
+    color: white;
+    text-align: left;
+}
+
+.BtnValidation {
+    margin: 0px;
+    width: auto;
+    border-end-end-radius: 5px;
+    border-end-start-radius: 5px;
+    background-color: orange;
+}
+
+.selectionOption {
+    margin-right: -5px;
+    background-color : lightgray;
+    width: auto;
+    height: 50px;
+    border-start-start-radius : 5px;
+    border-end-start-radius : 5px;
+}
+
+
+.FrameSearch {    
+    border-color: orange;
+    background-color: orange;
+    border-radius: 5px;
+    width: auto;
+    display: inline-block;
+    height: 50px;
+    align-self : center;
+}
+.collection-view {
+    list-style-type: none;
+    padding: 0;
+    background-color :none;
+}
+
+.collection-view li {
+    margin-bottom: 10px;
+}
+
+.ImageProduit{
+    border-start-start-radius : 5px;
+    border-start-end-radius : 5px;
+    width : 260px;
+    height : 180px;
+    border-color : none; 
+    overflow : hidden;
+    text-align : center;
+}
+
+.NomProduit{
+    font-size : 22px;
+}
+
+.DetailsProduit {
+    width: 260px;
+    display: -webkit-box;
+    -webkit-line-clamp: 3; /* Limite à 2 lignes */
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    text-align : center;
+}
+
+.produit-item {
+    display: block;
+    flex-direction: column;
+    text-align: center;
+    justify-content: center;
+    border-radius : 5px;
+    background-color : lightgray;
+    margin-top : 0px;
+    margin-bottom : 0px;
+    height : auto;
+    width : 260px;
+}
+
+.Btn-add{
+    border-radius : 3px;
+    background-color : orange;
+    border-color : none;
+    border : none;
+    height : 30px;
+    color : white;
+    margin-bottom : 10px;
+}
+.collection-view {
+    position: relative;
+    display: grid;
+    grid-template-columns: repeat(6, 1fr); /* Par défaut, 6 colonnes */
+    gap: 5px; /* Espace entre les éléments de la grille */
+    margin-left: 5px;
+    margin-right: 5px;
+    margin-top: 5px;
+    justify-items : center;
+}
+
+@media (max-width: 768px) {
+    /* Écran jusqu'à 768px de large */
+    .collection-view {
+        grid-template-columns: repeat(4, 1fr); /* 4 colonnes */
+    }
+}
+
+@media (max-width: 480px) {
+    /* Écran jusqu'à 480px de large */
+    .collection-view {
+        grid-template-columns: repeat(2, 1fr); /* 2 colonnes */
+    }
+}
+
+
+
+/*Style pour la diapo centrale*/
+
+.slideshow-container {
+    position: relative;
+    width: 100%;
+    height: 405px;
+    overflow: hidden;
+}
+
+.slide {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    transition: opacity 0.5s ease-in-out;
+}
+
+    .slide img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
+
+    .slide.active {
+        opacity: 1;
+    }
+
+/* Animation de la diapositive */
+@keyframes slideAnimation {
+    0% {
+        opacity: 0;
+    }
+
+    20% {
+        opacity: 1;
+    }
+
+    33.33% {
+        opacity: 1;
+    }
+
+    53.33% {
+        opacity: 0;
+    }
+
+    100% {
+        opacity: 0;
+    }
+}
+
+/* Ajouter la classe "active" pour afficher la première diapositive */
+.slide:first-child {
+    animation: slideAnimation 10s infinite;
+}
+
+.slide:nth-child(2) {
+    animation-delay: 3.33s;
+}
+
+.slide:nth-child(3) {
+    animation-delay: 6.66s;
+}
+
+
+
+/*Menu dropdown*/
+.dropdown {
+    position: relative;
+    margin-left : 5px;
+    margin-right : 5px;
+    text-align : center;
+}
+
+.dropbtn{
+    text-align : left;
+    background-color : orange;
+    color : white;
+    border : none;
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #f9f9f9;
+    min-width: 380px;
+    padding: 10px;
+    box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+    z-index: 1;
+    text-align: left;
+}
+
+.dropdown:hover .dropdown-content {
+    display: block;
+    border-radius : 5px;
+    text-align : left;
+}
+
+.grid-container {
+    display: grid;
+    grid-template-columns: auto auto;
+    grid-gap: 10px;
+    text-align : left;
+}
+
+.grid-item {
+    background-color: none;
+    padding: 10px;
+    align-items: start;
+}
+
+
+/*Div principale*/
+
+.Content-div-nav {
+    position: relative;
+    display: block;
+    text-align: center;
+}
+
+.align-item-div-bar{
+    display : inline-flex;
+    margin-top : 10px;
+    position : relative;
+}

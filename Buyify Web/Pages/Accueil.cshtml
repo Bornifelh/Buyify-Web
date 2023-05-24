@@ -24,15 +24,10 @@
         <div class="text-center">
     
            <ul class="collection-view">
-<<<<<<< HEAD
-                @foreach (var articles in Model.Article)
-=======
-                @foreach (var articles in Model.Articles)
->>>>>>> gestion-erreur-accueil
                 {
-                    <a href="/Details/@articles.Id" class="Soulignement">
+                    <a href="/Details" class="Soulignement">
                     <div class="produit-item">
-                        <img class="ImageProduit" src="@articles.Img1" alt="@articles.Nom" />
+                        <img class="ImageProduit" src="@Article." alt="@articles.Nom" />
                         <h3 class="NomProduit">@articles.Nom</h3>
                         <p><b>Prix : @articles.Prix</b></p>
                         <p class="DetailsProduit">@articles.Details</p>

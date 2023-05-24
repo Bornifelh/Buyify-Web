@@ -1,5 +1,6 @@
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
+using System;
 
 namespace Buyify_Web.Views.Login
 {
@@ -10,7 +11,7 @@ namespace Buyify_Web.Views.Login
 
         [BindProperty]
         public string? Password { get; set; }
-        
+
         public IActionResult OnPost()
         {
             // Code à exécuter lorsque le formulaire est soumis (bouton Login cliqué)
@@ -19,11 +20,7 @@ namespace Buyify_Web.Views.Login
             if (IsValidLogin(Email, Password))
             {
                 // Rediriger vers la page d'accueil ou une autre page appropriée
-<<<<<<< HEAD
-                return RedirectToPage("/Index");
-=======
                 return RedirectToPage("/Accueil");
->>>>>>> gestion-erreur-accueil
             }
             else
             {
@@ -37,12 +34,12 @@ namespace Buyify_Web.Views.Login
         {
             if (string.IsNullOrEmpty(email))
             {
-                throw new ArgumentException($"« {nameof(email)} » ne peut pas être vide ou avoir la valeur Null.", nameof(email));
+                throw new ArgumentException($"'{nameof(email)}' ne peut pas être vide ou avoir la valeur Null.", nameof(email));
             }
 
             if (string.IsNullOrEmpty(password))
             {
-                throw new ArgumentException($"« {nameof(password)} » ne peut pas être vide ou avoir la valeur Null.", nameof(password));
+                throw new ArgumentException($"'{nameof(password)}' ne peut pas être vide ou avoir la valeur Null.", nameof(password));
             }
             // Code de vérification des informations de connexion
             // Vous devez implémenter votre propre logique de vérification ici

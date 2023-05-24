@@ -1,6 +1,5 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
-using Microsoft.Extensions.Logging;
 using System.Collections.Generic;
 using System.Linq;
 
@@ -9,18 +8,19 @@ namespace Buyify_Web.Pages
     public class AccueilModel : PageModel
     {
         private readonly Panier _panier;
-        private static readonly ApplicationDbContext context;
+        private readonly ApplicationDbContext _context;
 
         public List<Article> Articles { get; set; }
 
-        public AccueilModel()
+        public AccueilModel(ApplicationDbContext context)
         {
+            _context = context;
             _panier = new Panier();
         }
 
-        public void OnGet(ApplicationDbContext context)
+        public void OnGet()
         {
-            Articles = context.Articles.ToList();
+            Articles = _context.Articles.ToList();
         }
 
         public IActionResult OnPostAjouterAuPanier(int id)
@@ -43,16 +43,15 @@ namespace Buyify_Web.Pages
             return RedirectToPage("Panier");
         }
 
-        private static Article GetArticleById(int id)
+        private Article GetArticleById(int id)
         {
-            using var context = new ApplicationDbContext();
-            return context.Articles.FirstOrDefault(a => a.Id == id);
+            return _context.Articles.FirstOrDefault(a => a.Id == id);
         }
     }
 
     public class Panier
     {
-        private List<PanierItem> _items;
+        private readonly List<PanierItem> _items;
 
         public Panier()
         {
@@ -65,13 +64,5 @@ namespace Buyify_Web.Pages
         {
             _items.Add(item);
         }
-    }
-
-    public class PanierItem
-    {
-        public int Id { get; set; }
-        public string NomProduit { get; set; }
-        public double Prix { get; set; }
-        public int Quantite { get; set; }
     }
 }

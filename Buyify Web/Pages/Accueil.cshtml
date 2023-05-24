@@ -4,37 +4,34 @@
     ViewData["Title"] = "Accueil";
 }
 
-<body class="Body-containt">    
-    
-
+<body class="Body-containt">
     <div class="div-centerale">
-            <div class="slideshow-container">
-                <div class="slide">
-                    <img src="https://m.media-amazon.com/images/I/718UxTjopBL._SX3000_.jpg" alt="Image 1">
-                </div>
-                <div class="slide">
-                    <img src="https://images-eu.ssl-images-amazon.com/images/G/08/Events/2023/MDAY/Store_Page/xcm_banners_01_v2_1500x300_fr-fr.jpg" alt="Image 2">
-                </div>
-                <div class="slide">
-                    <img src="https://m.media-amazon.com/images/I/71PXTGItC0L._AC_SX679_.jpg" alt="Image 3">
-                </div>
+        <div class="slideshow-container">
+            <div class="slide">
+                <img src="https://m.media-amazon.com/images/I/718UxTjopBL._SX3000_.jpg" alt="Image 1">
             </div>
-
+            <div class="slide">
+                <img src="https://images-eu.ssl-images-amazon.com/images/G/08/Events/2023/MDAY/Store_Page/xcm_banners_01_v2_1500x300_fr-fr.jpg" alt="Image 2">
+            </div>
+            <div class="slide">
+                <img src="https://m.media-amazon.com/images/I/71PXTGItC0L._AC_SX679_.jpg" alt="Image 3">
+            </div>
+        </div>
 
         <div class="text-center">
-    
-           <ul class="collection-view">
+            <ul class="collection-view">
+                @foreach (var article in Model.Articles)
                 {
                     <a href="/Details" class="Soulignement">
-                    <div class="produit-item">
-                        <img class="ImageProduit" src="@Article." alt="@articles.Nom" />
-                        <h3 class="NomProduit">@articles.Nom</h3>
-                        <p><b>Prix : @articles.Prix</b></p>
-                        <p class="DetailsProduit">@articles.Details</p>
-                        <form method="post" asp-page-handler="AjouterAuPanier" asp-route-id="@articles.Id">
-                            <button type="submit" class="Btn-add">Ajout au panier</button>
-                        </form>                
-                    </div>
+                        <div class="produit-item">
+                            <img class="ImageProduit" src="@article.Img1" alt="@article.Nom" />
+                            <h3 class="NomProduit">@article.Nom</h3>
+                            <p><b>Prix : @article.Prix</b></p>
+                            <p class="DetailsProduit">@article.Details</p>
+                            <form method="post" asp-page-handler="AjouterAuPanier" asp-route-id="@article.Id">
+                                <button type="submit" class="Btn-add">Ajout au panier</button>
+                            </form>
+                        </div>
                     </a>
                 }
             </ul>

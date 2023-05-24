@@ -13,6 +13,9 @@
         public string? Img2 { get; set; }
         public string? Img3 { get; set; }
         public string? Img4 { get; set; }
+<<<<<<< HEAD
         public object AccueillModel { get; internal set; }
+=======
+>>>>>>> gestion-erreur-accueil
     }
 }

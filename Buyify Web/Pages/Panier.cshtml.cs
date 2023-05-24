@@ -17,7 +17,11 @@ namespace Buyify_Web.Pages
 
         public void OnGet()
         {
+<<<<<<< HEAD
             PanierItems = _panier.PanierItems.ToList();
+=======
+            PanierItems = _panier.Items.ToList();
+>>>>>>> gestion-erreur-accueil
         }
     }
 }
